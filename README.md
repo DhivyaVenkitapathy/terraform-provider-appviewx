@@ -16,7 +16,7 @@
 terraform {
   required_providers {
     appviewx = {
-      version = "<specify_provider_version>"
+      version = "1.0.1"
       source  = "appviewx.com/provider/appviewx"
     }
   }
