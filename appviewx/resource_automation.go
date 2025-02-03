@@ -45,7 +45,7 @@ func ResourceAutomationServer() *schema.Resource {
 				Type:     schema.TypeMap,
 				Optional: true,
 			},
-			constants.DOWNLOAD_FILE_PATH_AUTOMATION: {
+			constants.CERTIFICATE_DOWNLOAD_PATH: {
 				Type:     schema.TypeString,
 				Optional: true,
 			},
