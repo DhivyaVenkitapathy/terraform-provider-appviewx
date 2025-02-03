@@ -1,9 +1,6 @@
 package appviewx
 
 import (
-	"context"
-
-	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 
 	"terraform-provider-appviewx/appviewx/config"
@@ -15,11 +12,19 @@ func Provider() *schema.Provider {
 		Schema: map[string]*schema.Schema{
 			constants.APPVIEWX_USERNAME: {
 				Type:     schema.TypeString,
-				Required: true,
+				Optional: true,
 			},
 			constants.APPVIEWX_PASSWORD: {
 				Type:     schema.TypeString,
-				Required: true,
+				Optional: true,
+			},
+			constants.APPVIEWX_CLIENT_ID: {
+				Type:     schema.TypeString,
+				Optional: true,
+			},
+			constants.APPVIEWX_CLIENT_SECRET: {
+				Type:     schema.TypeString,
+				Optional: true,
 			},
 			constants.APPVIEWX_ENVIRONMENT_IP: {
 				Type:     schema.TypeString,
@@ -39,14 +44,16 @@ func Provider() *schema.Provider {
 			"appviewx_create_certificate":   ResourceCertificateServer(),
 			"appviewx_download_certificate": ResourceDownloadCertificateServer(),
 		},
-		ConfigureContextFunc: providerConfigure,
+		ConfigureFunc: providerConfigure,
 	}
 }
 
-func providerConfigure(ctx context.Context, d *schema.ResourceData) (interface{}, diag.Diagnostics) {
+func providerConfigure(d *schema.ResourceData) (interface{}, error) {
 	appviewxEnvironment := config.AppViewXEnvironment{
 		AppViewXUserName:        d.Get(constants.APPVIEWX_USERNAME).(string),
 		AppViewXPassword:        d.Get(constants.APPVIEWX_PASSWORD).(string),
+		AppViewXClientId:        d.Get(constants.APPVIEWX_CLIENT_ID).(string),
+		AppViewXClientSecret:    d.Get(constants.APPVIEWX_CLIENT_SECRET).(string),
 		AppViewXEnvironmentIP:   d.Get(constants.APPVIEWX_ENVIRONMENT_IP).(string),
 		AppViewXEnvironmentPort: d.Get(constants.APPVIEWX_ENVIRONMENT_PORT).(string),
 		AppViewXIsHTTPS:         d.Get(constants.APPVIEWX_ENVIRONMENT_Is_HTTPS).(bool),
