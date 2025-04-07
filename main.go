@@ -10,8 +10,8 @@ import (
 )
 
 var (
-	version     string = "1.0.1"
-	releaseDate string = "Feb 1 2025"
+	version     string = "1.0.2"
+	releaseDate string = "April 10 2025"
 )
 
 func init() {
