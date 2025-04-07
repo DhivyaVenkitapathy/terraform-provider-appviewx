@@ -27,10 +27,10 @@ AppViewX Terraform Provider allows you to manage certificates using the AppViewX
 ```hcl
 provider "appviewx" {
     appviewx_client_id="clientid"
-	appviewx_client_secret="clientsecret"
-	appviewx_environment_is_https=true
-	appviewx_environment_ip="appviewx_environment_ip/fqdn"
-	appviewx_environment_port="appviewx_port"
+    appviewx_client_secret="clientsecret"
+    appviewx_environment_is_https=true
+    appviewx_environment_ip="appviewx_environment_ip/fqdn"
+    appviewx_environment_port="appviewx_port"
 }
 ```
 
@@ -50,5 +50,5 @@ For support, please contact [AppViewX Support](https://www.appviewx.com/support)
 The AppViewX Terraform Provider simplifies certificate management by enabling seamless integration with the AppViewX platform. Using this provider, you can automate the creation and retrieval of certificates, ensuring secure and efficient workflows for your infrastructure.
 
 Below are the available certificate management operations:
-- [Create Certificate](./create-certificate/appviewx_create_certificate.md)
-- [Download Certificate](./download-certificate/appviewx_download_certificate.md)
+- [Create Certificate](./Create_Certificate/index.md)
+- [Download Certificate](./Download_Certificate/index.md)
