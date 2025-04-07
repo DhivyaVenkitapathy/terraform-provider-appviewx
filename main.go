@@ -12,11 +12,13 @@ import (
 var (
 	version     string = "1.0.2"
 	releaseDate string = "April 10 2025"
+	description string = "Terraform Documentation Changes"
 )
 
 func init() {
 	log.Println("[INFO] version", version)
 	log.Println("[INFO] releaseDate", releaseDate)
+	log.Println("[INFO] description", description)
 }
 
 func main() {
