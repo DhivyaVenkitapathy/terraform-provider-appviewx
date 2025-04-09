@@ -18,7 +18,7 @@ AppViewX Terraform Provider allows you to manage certificates using the AppViewX
 
 ## Installation
 
-1. Download the `terraform-provider-appviewx` binary.
+1. Download the `terraform-provider-appviewx` binary from the [AppViweX Terraform GitHub](https://github.com/AppViewX/terraform-provider-appviewx).
 2. Place the binary in your Terraform plugins directory.
 3. Configure the provider in your Terraform configuration file.
 
@@ -29,7 +29,7 @@ provider "appviewx" {
     appviewx_client_id="clientid"
     appviewx_client_secret="clientsecret"
     appviewx_environment_is_https=true
-    appviewx_environment_ip="appviewx_environment_ip/fqdn"
+    appviewx_environment_ip="appviewx_environment_ip or appviewx_environment_fqdn"
     appviewx_environment_port="appviewx_port"
 }
 ```
@@ -37,13 +37,13 @@ provider "appviewx" {
 ## Atrributes
 
 - `appviewx_client_id`: The client ID used to authenticate with the AppViewX API. This is provided by your AppViewX administrator.
-- `appviewx_client_secret`: The client secret associated with the client ID. This is used for secure authentication and must be kept confidential.
+- `appviewx_client_secret`: The client secret associated with the client ID. This is used for secure authentication.
 - `appviewx_environment_is_https`: A boolean value indicating whether the AppViewX environment uses HTTPS. Set this to `true` if your environment is secured with HTTPS.
-- `appviewx_environment_ip`: The IP address or fully qualified domain name (FQDN) of the AppViewX environment. This specifies the endpoint for API communication.
-- `appviewx_environment_port`: The port number used to connect to the AppViewX environment. Ensure this matches the port configured for API access.
+- `appviewx_environment_ip`: The IP address or fully qualified domain name (FQDN) of the AppViewX environment. This specifies the endpoint for API communication. Here only the IP or FQDN should be provided without any port or any other values. In case of onpremise AppViewX, it will be IP or FQDN of the gateway, and in case of SAAS, then provide the FQDN of the AppViewX Tenant.
+- `appviewx_environment_port`: The port number used to connect to the AppViewX environment. Ensure this matches the port configured for API access. In case of onpremise AppViewX it will be 31443, and in case of SAAS then the port will be 443.
 
 ## Support
-For support, please contact [AppViewX Support](https://www.appviewx.com/support).
+For support, please contact [AppViewX Support](https://helpcenter.appviewx.com/login)
 
 ## Certificate Management
 
