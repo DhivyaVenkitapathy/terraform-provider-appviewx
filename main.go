@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	version     string = "1.0.2"
+	version     string = "1.0.3"
 	releaseDate string = "April 10 2025"
 	description string = "Terraform Documentation Changes"
 )
