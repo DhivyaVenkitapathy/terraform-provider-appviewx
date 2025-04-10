@@ -50,5 +50,5 @@ For support, please contact [AppViewX Support](https://helpcenter.appviewx.com/l
 The AppViewX Terraform Provider simplifies certificate management by enabling seamless integration with the AppViewX platform. Using this provider, you can automate the creation and retrieval of certificates, ensuring secure and efficient workflows for your infrastructure.
 
 Below are the available certificate management operations:
-- [Create Certificate](./Create_Certificate/index.md)
-- [Download Certificate](./Download_Certificate/index.md)
+- [Create Certificate](resources/appviewx_create_certificate.md)
+- [Download Certificate](resources/appviewx_download_certificate.md)
