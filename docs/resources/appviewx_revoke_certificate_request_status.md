@@ -26,9 +26,11 @@ The `appviewx_revoke_certificate_request_status` resource is used to poll the st
 
 - **`retry_count`** (int):  
   Number of times to retry checking workflow status (default: 10).
+  Reasonable values - 10 and above
 
 - **`retry_interval`** (int):  
   Seconds to wait between retry attempts (default: 20).
+  Reasonable values - 20 and above
 
 ## Example Usage
 
@@ -40,16 +42,20 @@ resource "appviewx_revoke_certificate_request_status" "revoke_status" {
 }
 ```
 
-## Import
+## Response
 
-To import an existing workflow status into the Terraform state, use:
+Response after pooling the status of the revoke request
 
 ```bash
-terraform import appviewx_revoke_certificate_request_status.revoke_status <request_id>
+[CERTIFICATE REVOCATION][SUCCESS] ✅ Operation Result:
+{
+  "completed_at": "<Timestamp>",
+  "operation": "Certificate Revocation",
+  "status": "Successful",
+  "status_code": 1,
+  "workflow_id": "2648"
+}
 ```
-Replace `<request_id>` with the actual workflow request ID.
-
----
 
 ## Destroy
 

@@ -33,8 +33,7 @@ func ResourceCertificatePushAKV() *schema.Resource {
 			},
 			"workflow_name": {
 				Type:        schema.TypeString,
-				Optional:    true,
-				Default:     "Desjardins Create Certificate Push to AKV",
+				Required:    true,
 				Description: "The workflow name to execute",
 			},
 			"status_code": {
@@ -131,7 +130,7 @@ func resourceCertificatePushAKVCreate(d *schema.ResourceData, m interface{}) err
 	// Temporarily parse to get the common name
 	var tempFieldInfo map[string]interface{}
 	if err := json.Unmarshal([]byte(fieldInfoString), &tempFieldInfo); err == nil {
-		if certificateCommonName, ok := tempFieldInfo["cn_uploadcsr"]; ok {
+		if certificateCommonName, ok := tempFieldInfo["cn"]; ok {
 			logger.Debug(" Certificate Common Name from field_info: %v", certificateCommonName)
 			d.Set("certificate_common_name", certificateCommonName)
 		}
