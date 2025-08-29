@@ -33,6 +33,8 @@ provider "appviewx" {
     appviewx_environment_is_https=true
     appviewx_environment_ip="appviewx_environment_ip or appviewx_environment_fqdn"
     appviewx_environment_port="appviewx_port"
+    certificate_download_password="certificate_password"
+    key_download_password="key_password"
     log_level="INFO"
 }
 ```
@@ -73,6 +75,16 @@ provider "appviewx" {
     - Ensure this matches the port configured for API access.
     - For on-premise AppViewX, use `31443`.
     - For SaaS, use `443`.
+
+- `certificate_download_password`:
+    - The password used to download the created certificate or provided certificate details in formats such as P12 or PFX.
+    - If specified in the provider block, the password will not be stored in the `.tfstate` file.
+    - When the password is defined in both the provider and the resource, the value from the provider takes precedence.
+
+- `key_download_password`:
+    - The password used to download the private key associated with the certificate.
+    - Similar to `certificate_download_password`, if specified in the provider block, it will not be stored in the `.tfstate` file.
+    - If defined in both the provider and the resource, the value from the provider takes precedence.
 
 - `log_level`:
     - Describes the log level.
