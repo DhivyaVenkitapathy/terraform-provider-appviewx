@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	version     = "1.0.7"
+	version     = "1.0.8"
 	releaseDate = "Aug 29, 2025"
 	description = "Changes in Download Certificate and Key Resource"
 )
