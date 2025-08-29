@@ -10,9 +10,9 @@ import (
 )
 
 var (
-	version     string = "1.0.4"
-	releaseDate string = "July 14 2025"
-	description string = "Custom Create Certificate and Push to AKV"
+	version     = "1.0.6"
+	releaseDate = "July 25, 2025"
+	description = "Create Certificate and Push to AKV, Revoke Certificate in AppViewX, Remove Certificate from AKV and Search Certificate in AppViewX via Custom Workflow."
 )
 
 func init() {
