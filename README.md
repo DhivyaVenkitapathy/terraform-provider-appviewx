@@ -135,8 +135,7 @@ resource "appviewx_download_certificate" "downloadcert"{
 
 ```
 > **Note:** When the password is defined in both the provider and the resource, the value from the provider takes precedence.
-```
-```
+
 ## Steps to run
 ```
 > Keep the .tf files in the current folder
