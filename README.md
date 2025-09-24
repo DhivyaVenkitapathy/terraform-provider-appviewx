@@ -133,9 +133,9 @@ resource "appviewx_download_certificate" "downloadcert"{
     download_password_protected_key=false
 }
 
-```
+
 > **Note:** When the password is defined in both the provider and the resource, the value from the provider takes precedence.
-```
+
 ```
 ## Steps to run
 ```
