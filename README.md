@@ -33,6 +33,8 @@ provider "appviewx"{
     appviewx_environment_is_https=true
     appviewx_environment_ip="APPVIEWX_HOST_NAME"
     appviewx_environment_port="APPVIEWX_PORT_NUMBER"
+    certificate_download_password="<Password to save the certificate with types P12,JKS and PFX>"
+    key_download_password="<Password to save the private key>"
 }
 
 resource "appviewx_create_certificate" "createcert"{
@@ -130,6 +132,10 @@ resource "appviewx_download_certificate" "downloadcert"{
     #If download_password_protected_key is true then key will be downloaded as a password #protected key which can be used with the password specified in field key_download_password
     download_password_protected_key=false
 }
+
+```
+> **Note:** When the password is defined in both the provider and the resource, the value from the provider takes precedence.
+```
 
 ```
 ## Steps to run
